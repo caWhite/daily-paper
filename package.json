@@ -1,0 +1,21 @@
+{
+  "name": "daily-paper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "request": "^2.69.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.6.5",
+    "jshint": "^2.9.1"
+  },
+  "scripts": {
+    "start": "node lib/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib",
+    "jshint": "jshint src/index.js"
+  },
+  "author": "Corey White",
+  "license": "ISC",
+  "description": ""
+}
