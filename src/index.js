@@ -1,13 +1,14 @@
 const request = require('request');
 const fs = require('fs');
 const path = require('path');
-const wallpaper = require('wallpaper');
+const mkdirp = require('mkdirp');
 var exec = require('child_process').exec;
 let picturesDir = path.join(process.env.HOME, "Pictures", "Unsplash Daily");
 
 fs.access(picturesDir, fs.W_OK, (error) => {
     if (error && error.code === 'ENOENT') {
-        fs.mkdir(picturesDir, () => {
+      console.log(`${picturesDir} not found. Creating it now . . .`);
+        mkdirp(picturesDir, () => {
             DownloadPhoto(picturesDir);
         });
     } else {
